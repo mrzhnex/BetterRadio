@@ -10,11 +10,13 @@ namespace BetterRadio
         public override void OnEnable()
         {
             SetEvents = new SetEvents();
+            Events.WaitingForPlayersEvent += SetEvents.OnWaitingForPlayers;
             Events.RoundStartEvent += SetEvents.OnRoundStart;
         }
 
         public override void OnDisable()
         {
+            Events.WaitingForPlayersEvent -= SetEvents.OnWaitingForPlayers;
             Events.RoundStartEvent -= SetEvents.OnRoundStart;
         }
 

@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddRadioDurabilityComponent.cs" />
+    <Compile Include="Global.cs" />
     <Compile Include="MainSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SetEvents.cs" />
