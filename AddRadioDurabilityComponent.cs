@@ -31,14 +31,14 @@ namespace BetterRadio
                                     PlayersRadioDurability.Add(referenceHub.GetPlayerId(), referenceHub.inventory.items[i].durability);
                                 }
 
-                                if (PlayersRadioDurability[referenceHub.GetPlayerId()] <= referenceHub.inventory.items[i].durability - 10.0f)
+                                if (PlayersRadioDurability[referenceHub.GetPlayerId()] - 10.0f >= referenceHub.inventory.items[i].durability)
                                 {
                                     Inventory.SyncItemInfo item = referenceHub.inventory.items[i];
                                     item.durability += 5.0f;
                                     referenceHub.inventory.items[i] = item;
                                     PlayersRadioDurability[referenceHub.GetPlayerId()] = referenceHub.inventory.items[i].durability;
                                 }
-                                else if (PlayersRadioDurability[referenceHub.GetPlayerId()] > referenceHub.inventory.items[i].durability)
+                                else if (PlayersRadioDurability[referenceHub.GetPlayerId()] < referenceHub.inventory.items[i].durability)
                                 {
                                     PlayersRadioDurability[referenceHub.GetPlayerId()] = referenceHub.inventory.items[i].durability;
                                 }
