@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace BetterRadio
 {
-    internal class SetEvents
+    public class SetEvents
     {
         internal void OnRoundStart()
         {
