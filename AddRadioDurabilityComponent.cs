@@ -1,4 +1,4 @@
-﻿using EXILED.Extensions;
+﻿using Exiled.API.Features;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,55 +15,41 @@ namespace BetterRadio
             if (Timer > TimeIsUp)
             {
                 Timer = 0.0f;
-                if (Global.IsFullRp)
+
+                foreach (Player player in Player.List)
                 {
-                    foreach (ReferenceHub referenceHub in Player.GetHubs())
+                    if (player.Team == Team.SCP || player.Role == RoleType.Spectator)
+                        continue;
+                    for (int i = 0; i < player.Inventory.items.Count; i++)
                     {
-                        if (referenceHub.GetTeam() == Team.SCP || referenceHub.GetRole() == RoleType.Spectator)
+                        if (player.Inventory.items[i].id != ItemType.Radio)
                             continue;
-
-                        for (int i = 0; i < referenceHub.inventory.items.Count; i++)
+                        if (Global.IsFullRp)
                         {
-                            if (referenceHub.inventory.items[i].id == ItemType.Radio)
+                            if (!PlayersRadioDurability.ContainsKey(player.Id))
                             {
-                                if (!PlayersRadioDurability.ContainsKey(referenceHub.GetPlayerId()))
-                                {
-                                    PlayersRadioDurability.Add(referenceHub.GetPlayerId(), referenceHub.inventory.items[i].durability);
-                                }
-
-                                if (PlayersRadioDurability[referenceHub.GetPlayerId()] - 10.0f >= referenceHub.inventory.items[i].durability)
-                                {
-                                    Inventory.SyncItemInfo item = referenceHub.inventory.items[i];
-                                    item.durability += 5.0f;
-                                    referenceHub.inventory.items[i] = item;
-                                    PlayersRadioDurability[referenceHub.GetPlayerId()] = referenceHub.inventory.items[i].durability;
-                                }
-                                else if (PlayersRadioDurability[referenceHub.GetPlayerId()] < referenceHub.inventory.items[i].durability)
-                                {
-                                    PlayersRadioDurability[referenceHub.GetPlayerId()] = referenceHub.inventory.items[i].durability;
-                                }
+                                PlayersRadioDurability.Add(player.Id, player.Inventory.items[i].durability);
+                            }
+                            if (PlayersRadioDurability[player.Id] - 10.0f >= player.Inventory.items[i].durability)
+                            {
+                                Inventory.SyncItemInfo item = player.Inventory.items[i];
+                                item.durability += 5.0f;
+                                player.Inventory.items[i] = item;
+                                PlayersRadioDurability[player.Id] = player.Inventory.items[i].durability;
+                            }
+                            else if (PlayersRadioDurability[player.Id] < player.Inventory.items[i].durability)
+                            {
+                                PlayersRadioDurability[player.Id] = player.Inventory.items[i].durability;
                             }
                         }
-                    }
-                }
-                else
-                {
-                    foreach (ReferenceHub referenceHub in Player.GetHubs())
-                    {
-                        if (referenceHub.GetTeam() == Team.SCP || referenceHub.GetRole() == RoleType.Spectator)
-                            continue;
-
-                        for (int i = 0; i < referenceHub.inventory.items.Count; i++)
+                        else
                         {
-                            if (referenceHub.inventory.items[i].id == ItemType.Radio)
-                            {
-                                Inventory.SyncItemInfo item = referenceHub.inventory.items[i];
-                                item.durability = 100.0f;
-                                referenceHub.inventory.items[i] = item;
-                            }
+                            Inventory.SyncItemInfo item = player.Inventory.items[i];
+                            item.durability = 100.0f;
+                            player.Inventory.items[i] = item;
                         }
-                    }
-                }
+                    }                   
+                }         
             }
         }
         private readonly Dictionary<int, float> PlayersRadioDurability = new Dictionary<int, float>();

@@ -1,10 +1,6 @@
 E:\SCP SL plugins\BetterRadio\bin\Debug\BetterRadio.dll
 E:\SCP SL plugins\BetterRadio\bin\Debug\BetterRadio.pdb
 E:\SCP SL plugins\BetterRadio\bin\Debug\Assembly-CSharp.dll
-E:\SCP SL plugins\BetterRadio\bin\Debug\EXILED.dll
-E:\SCP SL plugins\BetterRadio\bin\Debug\EXILED_Events.dll
-E:\SCP SL plugins\BetterRadio\bin\Debug\EXILED_Idler.dll
-E:\SCP SL plugins\BetterRadio\bin\Debug\EXILED_Permissions.dll
 E:\SCP SL plugins\BetterRadio\bin\Debug\Mirror.dll
 E:\SCP SL plugins\BetterRadio\bin\Debug\UnityEngine.AudioModule.dll
 E:\SCP SL plugins\BetterRadio\bin\Debug\UnityEngine.CoreModule.dll
@@ -58,7 +54,6 @@ E:\SCP SL plugins\BetterRadio\bin\Debug\UnityEngine.SpriteShapeModule.dll
 E:\SCP SL plugins\BetterRadio\bin\Debug\UnityEngine.UIElementsModule.dll
 E:\SCP SL plugins\BetterRadio\bin\Debug\UnityEngine.VehiclesModule.dll
 E:\SCP SL plugins\BetterRadio\bin\Debug\UnityEngine.WindModule.dll
-E:\SCP SL plugins\BetterRadio\bin\Debug\UnityEngine.ARModule.dll
 E:\SCP SL plugins\BetterRadio\bin\Debug\UnityEngine.XRModule.dll
 E:\SCP SL plugins\BetterRadio\bin\Debug\UnityEngine.InputModule.dll
 E:\SCP SL plugins\BetterRadio\obj\Debug\BetterRadio.csprojAssemblyReference.cache
@@ -66,3 +61,16 @@ E:\SCP SL plugins\BetterRadio\obj\Debug\BetterRadio.csproj.CoreCompileInputs.cac
 E:\SCP SL plugins\BetterRadio\obj\Debug\BetterRadio.csproj.CopyComplete
 E:\SCP SL plugins\BetterRadio\obj\Debug\BetterRadio.dll
 E:\SCP SL plugins\BetterRadio\obj\Debug\BetterRadio.pdb
+E:\SCP SL plugins\BetterRadio\bin\Debug\Exiled.API.dll
+E:\SCP SL plugins\BetterRadio\bin\Debug\Exiled.Events.dll
+E:\SCP SL plugins\BetterRadio\bin\Debug\DissonanceVoip.dll
+E:\SCP SL plugins\BetterRadio\bin\Debug\Unity.TextMeshPro.dll
+E:\SCP SL plugins\BetterRadio\bin\Debug\Facepunch.Steamworks.Win64.dll
+E:\SCP SL plugins\BetterRadio\bin\Debug\Assembly-CSharp-firstpass.dll
+E:\SCP SL plugins\BetterRadio\bin\Debug\BouncyCastle.Crypto.dll
+E:\SCP SL plugins\BetterRadio\bin\Debug\Mono.Nat.dll
+E:\SCP SL plugins\BetterRadio\bin\Debug\CommandSystem.Core.dll
+E:\SCP SL plugins\BetterRadio\bin\Debug\CloudflareSolverRe.dll
+E:\SCP SL plugins\BetterRadio\bin\Debug\zxing.unity.dll
+E:\SCP SL plugins\BetterRadio\bin\Debug\System.Buffers.dll
+E:\SCP SL plugins\BetterRadio\bin\Debug\System.Memory.dll
